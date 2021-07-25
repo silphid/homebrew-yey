@@ -5,25 +5,25 @@
 class Yey < Formula
   desc "An interactive, human-friendly docker launcher for dev and devops"
   homepage "https://github.com/silphid/yey"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/silphid/yey/releases/download/v0.2.0/yey_0.2.0_darwin_x86_64.tar.gz"
-    sha256 "4d834f2872f89b7f240410199ee005d008e05584d8da2ff347d8659f39a0f3b9"
+    url "https://github.com/silphid/yey/releases/download/v0.3.0/yey_0.3.0_darwin_x86_64.tar.gz"
+    sha256 "2650e3c0b46ef382f648e09c9cbeed96c0f53accfc5891cf84bf7e4582b115cc"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/silphid/yey/releases/download/v0.2.0/yey_0.2.0_darwin_arm64.tar.gz"
-    sha256 "8bd97fdcc1ce02971cbffb8ca084828f4eb716a4d5389f0faf767aadaa64625e"
+    url "https://github.com/silphid/yey/releases/download/v0.3.0/yey_0.3.0_darwin_arm64.tar.gz"
+    sha256 "f48c7e1ed65326bcb205f5ab460066562739ea2283d40cccd31e148ced0ceb48"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/silphid/yey/releases/download/v0.2.0/yey_0.2.0_linux_x86_64.tar.gz"
-    sha256 "5da15aad326aabd30eb5d97b96a79f965542bb593fcd320cb07f6f3c5594032a"
+    url "https://github.com/silphid/yey/releases/download/v0.3.0/yey_0.3.0_linux_x86_64.tar.gz"
+    sha256 "eeabd80ae41850f21cd7cc9bf220d1afeeef2c791623c614abad54106c763ed1"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/silphid/yey/releases/download/v0.2.0/yey_0.2.0_linux_arm64.tar.gz"
-    sha256 "d7163f3ae6c5f7cececbecc19ad20cf3b3ceaa5d7cb533107c201096cb8aecd0"
+    url "https://github.com/silphid/yey/releases/download/v0.3.0/yey_0.3.0_linux_arm64.tar.gz"
+    sha256 "d3ac33c11abbc82a6bcf5bc10d8112255d914d12e7676df72d704a71d6e05bc7"
   end
 
   def install
