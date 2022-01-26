@@ -5,28 +5,44 @@
 class Yey < Formula
   desc "An interactive, human-friendly docker launcher for dev and devops"
   homepage "https://github.com/silphid/yey"
-  version "0.4.1"
+  version "0.5.0"
   license "MIT"
-  bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/silphid/yey/releases/download/v0.4.1/yey_0.4.1_darwin_x86_64.tar.gz"
-    sha256 "174ca4fb0b318ac3920ce5a7bb0899ca7b1fde09c385731d48fcf80577e68ebe"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/silphid/yey/releases/download/v0.4.1/yey_0.4.1_darwin_arm64.tar.gz"
-    sha256 "6887506a1e3c433fec0a738fc9ecb999a1f77abe27040c457b5d058c885e10e5"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/silphid/yey/releases/download/v0.4.1/yey_0.4.1_linux_x86_64.tar.gz"
-    sha256 "61af8513886dbe5d66bbdeb270602247733b94c92208577e8cbf5d8a6bff71ed"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/silphid/yey/releases/download/v0.4.1/yey_0.4.1_linux_arm64.tar.gz"
-    sha256 "3726a2cfc229d8a18fc5ee1adb441bd07e2702d94e6b5d903126cbe9f997133b"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/silphid/yey/releases/download/v0.5.0/yey_0.5.0_darwin_arm64.tar.gz"
+      sha256 "f9ecda44f858e0b74499a58f66e49737211df15db7c78171bbb972a730aa7d07"
+
+      def install
+        bin.install "yey"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/silphid/yey/releases/download/v0.5.0/yey_0.5.0_darwin_x86_64.tar.gz"
+      sha256 "1d8966f4d7e115a190564da788b4ffa5c6ae0eb76f2f79ab8a1a7c74e828793f"
+
+      def install
+        bin.install "yey"
+      end
+    end
   end
 
-  def install
-    bin.install "yey"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/silphid/yey/releases/download/v0.5.0/yey_0.5.0_linux_arm64.tar.gz"
+      sha256 "df2e67d439c69283d496089629db0e142463145c20a0e286a75501d50ab815a8"
+
+      def install
+        bin.install "yey"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/silphid/yey/releases/download/v0.5.0/yey_0.5.0_linux_x86_64.tar.gz"
+      sha256 "741ec5acc5a80f10019fdbd4db2b4f891f889f1891d28612cff2ad3a377a4312"
+
+      def install
+        bin.install "yey"
+      end
+    end
   end
 end
